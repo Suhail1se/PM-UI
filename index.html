@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome !</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+</head>
+<body>
+    <!-- Nav bar{begin}-->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+            <li><a href="notifications/index.html"><i class="fa fa-bell" aria-hidden="true"></i>Notifications</a></li>
+            <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i> LOG OUT</a></li>
+            <li><a href="settings/index.html"><i class="fa fa-cog" aria-hidden="true"></i> Settings</a></li>
+        </ul>
+    </nav>
+    <!-- Nav bar{end}-->
+
+    <!-- Dashboard{begin}-->
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <ul>
+            <li><a href="projects/index.html"><i class="fa fa-book" aria-hidden="true"></i> Projects</a></li>
+            <li><a href="teams/index.html"><i class="fa fa-users" aria-hidden="true"></i> Teams</a></li>
+            <li><a href="calendar/index.html"><i class="fa fa-calendar"></i> Calendar</a></li>
+        </ul>
+    </div>
+    <!-- Dashboard{end}-->
+
+    <!-- Container{begin}-->
+    <main>
+        <div class="container">
+            <h2>Welcome Souhaiel</h2>
+            <div class="button-container">
+                <button class="button">Browse work teams</button>
+                <button id="createTeamBtn" class="button">Create a work team</button>
+                <button id="joinTeamBtn" class="button">Join a work team</button>
+            </div>
+        </div>
+    </main>
+    <!-- Container{end}-->
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Join team pop-up {begin} -->
+    <div class="jt-container" id="jt-container">
+        <button id="jt-close"><span>X</span></button>
+        <h1>Join your team!</h1>
+        <div class="jt-lists-container">
+            <div class="jt-list">
+                <input type="text" class="jt-list-name" placeholder="Enter the work team code">
+                <button id="jt-joinTeam">Join</button>
+            </div>
+        </div>
+    </div>
+    <!-- Join team pop-up {end} -->
+
+    <!-- Create team pop-up {begin} -->
+    <div class="ct-container" id="ct-container">
+        <button id="ct-close"><span>X</span></button>
+        <h2>Generate your code to invite your mates!</h2>
+        <div class="ct-button-container">
+            <button id="ct-generateCodeBtn" class="ct-button">Generate my code</button>
+            <button id="ct-joinTeamBtn" class="ct-button" disabled>Continue</button>
+            <p id="ct-code">******</p>
+        </div>
+    </div>
+    <!-- Create team pop-up {end} -->
+
+    <script src="script.js"></script>
+</body>
+</html>

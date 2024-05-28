@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+body {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('background.jpg');
+    background-size: cover;
+}
+/*Navbar begin*/
+.navbar{
+    margin: 0;
+    
+    font-family: Arial, sans-serif;
+}
+.navbar ul{
+    list-style-type: none;
+    background-color: #122eac;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    text-align: center;
+
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    padding: 25px 35px;
+    display: flex;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    position: relative; /* Add position relative */
+}
+.navbar a i {
+    margin-right: 5px; /* Add margin to the right of the icon */
+}
+.navbar a:hover{
+    background-color: #0056b3;
+}
+.navbar li{
+    display: inline-block;
+}
+/*Navbar end*/
+
+/* Sidebar*/
+.sidebar {
+    height: 100vh;
+    width: 250px;
+    background-color: #122eac;
+    color: #fff;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 2px solid transparent; /* Add a transparent bottom border */
+    transition: border-bottom-color 0.3s; /* Add a transition for smooth effect */
+}
+
+.sidebar ul li a:hover {
+    border-bottom-color: #fff; /* Change the bottom border color on hover */
+}
+
+/*Sidebar*/
+/*main container*/
+main{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+h1{
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 0 80px; /* Adjusted padding to make the container twice as large */
+}
+
+.button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* Added margin between buttons */
+}
+
+.button:last-child {
+    margin-right: 0; /* Remove margin from last button */
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.account-icon,
+.notification-icon {
+    position: absolute;
+    top: 20px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    right: 80px;
+}
+
+.account-icon img,
+.notification-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.account-dropdown,
+.notification {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1;
+    padding: 10px;
+}
+
+.account-icon:hover .account-dropdown {
+    display: block;
+}
+
+.notification-icon:hover + .notification {
+    display: block;
+}
+
+/* Remove default outline on click */
+.notification-icon:focus {
+    outline: none;
+}
+/*main container*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 998; /* Ensure the overlay is below the pop-up but above the rest of the content */
+    display: none; /* Initially hidden */
+}
+.overlay.open {
+    display: block; /* Display the overlay when it is open */
+}
+/*Join team pop up*/
+
+.jt-container {
+    opacity: 0;
+    width: 80%; /* Adjust the width of the pop-up */
+    max-width: 400px; /* Set a maximum width */
+    margin: 20px auto; /* Center the pop-up horizontally */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%; /* Position the top of the pop-up at the center of the page */
+    left: 50%; /* Position the left side of the pop-up at the center of the page */
+    transform: translate(-50%, -50%); /* Use transform to center the pop-up precisely */
+    transition: all 0.3s ease-in-out;
+    z-index: 999; /* Adjusted z-index */
+}
+
+
+
+.jt-container.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+
+
+
+.jt-lists-container {
+    margin-top: 20px;
+}
+
+.jt-list {
+    margin-bottom: 20px;
+}
+
+.jt-list-name {
+    width: 200px;
+    padding: 5px;
+    margin-right: 10px;
+
+}
+
+#jt-joinTeam {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.jt-task-item {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.jt-task-item input[type="checkbox"] {
+    margin-right: 5px;
+    
+}
+#jt-joinTeam {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* Added margin between buttons */
+}
+
+#jt-joinTeam:last-child {
+    margin-right: 0; /* Remove margin from last button */
+}
+
+#jt-joinTeam:hover {
+    background-color: #0056b3;
+}
+#jt-close {
+    background-color: #f9f9f9;
+    float: right;
+    padding: 5px; /* Add padding for better clickability */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 50%; /* Make the button circular */
+    width: 30px; /* Set a fixed width */
+    height: 30px; /* Set a fixed height */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+#jt-close:hover {
+    background-color: red; /* Change background color on hover for feedback */
+}
+
+#jt-close:hover span {
+    color: white; /* Change text color to white on hover */
+}
+
+/*Join team pop up*/
+/*create team pop up*/
+.ct-container {
+    opacity: 0;
+    width: 80%; /* Adjust the width of the pop-up */
+    max-width: 400px; /* Set a maximum width */
+    margin: 20px auto; /* Center the pop-up horizontally */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%; /* Position the top of the pop-up at the center of the page */
+    left: 50%; /* Position the left side of the pop-up at the center of the page */
+    transform: translate(-50%, -50%); /* Use transform to center the pop-up precisely */
+    transition: all 0.3s ease-in-out;
+    z-index: 999; /* Adjusted z-index */
+}
+.ct-container.open {
+    opacity: 1;
+    z-index: 999;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.ct-button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    padding: 0 80px; /* Adjusted padding to make the container twice as large */
+}
+.ct-button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+.ct-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 10px; /* Added margin between buttons */
+}
+
+.ct-button:last-child {
+    margin-right: 0; /* Remove margin from last button */
+}
+
+.ct-button:hover {
+    background-color: #0056b3;
+}
+#ct-close {
+    background-color: #f9f9f9;
+    float: right;
+    padding: 5px; /* Add padding for better clickability */
+    border: none; /* Remove default button border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 50%; /* Make the button circular */
+    width: 30px; /* Set a fixed width */
+    height: 30px; /* Set a fixed height */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+#ct-close:hover {
+    background-color: red; /* Change background color on hover for feedback */
+}
+
+#ct-close:hover span {
+    color: white; /* Change text color to white on hover */
+}
+
+
+/*create team pop up*/
